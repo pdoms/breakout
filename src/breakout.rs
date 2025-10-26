@@ -154,7 +154,7 @@ impl State for Breakout {
         renderer: &mut grapes::renderer::two_d::Renderer,
         events: grapes::events::input::Events,
         _camera: grapes::engine::camera_2d::Camera2dRef,
-        time_info: &grapes::context::time::TimeInfo,
+        _time_info: &grapes::context::time::TimeInfo,
     ) -> bool {
         if self.update(renderer, events) {
             return true;
@@ -162,10 +162,10 @@ impl State for Breakout {
         renderer.clear_background(GrapesColors::GrapesBlack);
         self.draw(renderer);
 
-        let buf = format!("\r{}", time_info.get_average_fps());
-        let mut stdout = std::io::stdout().lock();
-        stdout.write(buf.as_bytes()).unwrap();
-        stdout.flush().unwrap();
+        //        let buf = format!("\r{}", time_info.get_average_fps());
+        //        let mut stdout = std::io::stdout().lock();
+        //        stdout.write(buf.as_bytes()).unwrap();
+        //        stdout.flush().unwrap();
         return false;
     }
 }
